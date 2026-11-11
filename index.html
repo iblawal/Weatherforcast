@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Search any city for current weather conditions.">
+  <title>Weather</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="default">
+  <main class="card">
+    <form class="search" id="search-form" role="search" autocomplete="off">
+      <label for="city-input" class="visually-hidden">City name</label>
+      <input
+        id="city-input"
+        class="search-input"
+        type="search"
+        placeholder="Search for a city…"
+        maxlength="80"
+        required
+      >
+      <button class="search-btn" type="submit" id="search-btn">Search</button>
+    </form>
+
+    <div class="status" id="status" role="status" aria-live="polite">
+      <p class="status-message" id="status-message">Enter a city to see the current weather.</p>
+    </div>
+
+    <section class="weather" id="weather" hidden aria-label="Current weather">
+      <div class="weather-icon" id="weather-icon" aria-hidden="true"></div>
+      <h1 class="weather-city" id="city-name"></h1>
+      <p class="weather-country" id="city-region"></p>
+      <p class="weather-temp"><span id="temperature">--</span><span class="unit">°C</span></p>
+      <p class="weather-condition" id="condition"></p>
+
+      <dl class="details">
+        <div class="detail">
+          <dt>Humidity</dt>
+          <dd id="humidity">--</dd>
+        </div>
+        <div class="detail">
+          <dt>Wind</dt>
+          <dd id="wind">--</dd>
+        </div>
+      </dl>
+    </section>
+
+    <p class="credit">Data by <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
